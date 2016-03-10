@@ -12,17 +12,18 @@ class Member():
     def add_question_asked(self, question):
         self.questions_asked.append(question)
 
-    def add_coded_line(self, lines_of_code):
-        self.lines_of_code.append(lines_of_code)
-        num_lines_coded += 1
-        get_coding_level(num_lines_coded)
+    def get_coding_level(self,num_lines_coded):
+      if num_lines_coded <= 100:
+        coding_level = "beginner"
+      if num_lines_coded > 100 and num_lines_coded <= 1000:
+        coding_level = 'novice'
+      if num_lines_coded > 1000 and num_lines_coded <= 10000:
+        coding_level = 'intermediate'
+      else:
+        coding_level = 'master'
+      return coding_level
 
-    def get_coding_level(self, coding_level):
-        if num_lines_coded <= 100:
-            coding_level = "beginner"
-        if num_lines_coded > 100 and num_lines_coded <= 1000:
-            coding_level = 'novice'
-        if num_lines_coded > 1000 and num <= 10000:
-            coding_level = 'intermediate'
-        else:
-            coding_level = 'master'
+    def add_coded_line(self, line_of_code):
+        self.lines_of_code.append(line_of_code)
+        self.num_lines_coded += 1
+        self.coding_level = get_coding_level(self.num_lines_coded)
