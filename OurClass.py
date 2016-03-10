@@ -16,13 +16,13 @@ class OurClass():
         else:
            self.at_capacity = False
 
-    def get_num_questions_asked(self):
+    def get_num_questions_asked(self, num_questions_asked):
        num_questions_asked = 0
        for member in members:
            num_questions_asked += len(questions_asked)
        return num_questions_asked
 
-    def get_num_lines_code(self):
+    def get_num_lines_code(self, num_lines_coded):
        num_lines_coded = 0
        for member in members:
            num_lines_coded += num_lines_coded
